@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #12124f;
+  --color-navy-dark: #0a0a35;
+  --color-gold: #e67e22;
+  --color-gold-dark: #c86a17;
+  --color-gold-light: #f5c882;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-navy-dark);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom utility classes */
+.gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+}
+
+.gradient-navy {
+  background: linear-gradient(180deg, var(--color-navy-dark), var(--color-navy));
+}
+
+.gold-border {
+  border: 2px solid var(--color-gold);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(230, 126, 34, 0.3);
+}
+
+.countdown-box {
+  background: rgba(230, 126, 34, 0.15);
+  border: 1px solid rgba(230, 126, 34, 0.4);
+  border-radius: 12px;
+  padding: 12px 16px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 0 auto;
+  width: 60%;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: #fff;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+}
+
+.pose-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(230, 126, 34, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.pose-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: rgba(230, 126, 34, 0.1);
+}
+
+.faq-answer {
+  padding: 0 20px 16px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.highlight-card {
+  background: rgba(230, 126, 34, 0.08);
+  border: 1px solid rgba(230, 126, 34, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
