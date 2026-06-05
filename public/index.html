@@ -59,7 +59,9 @@ img{max-width:100%;display:block}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all 0.3s ease}
 .nav.scrolled{background:rgba(11,15,46,0.95);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,0.3);padding:10px 0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
-.nav-logo{font-family:var(--font-accent);font-size:1rem;color:var(--gold);letter-spacing:0.15em;font-weight:600}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.nav-logo-img{height:48px;width:auto;transition:height 0.3s ease}
+.nav.scrolled .nav-logo-img{height:40px}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:0.85rem;color:var(--ivory-muted);transition:color 0.3s;letter-spacing:0.02em}
 .nav-links a:hover{color:var(--gold)}
@@ -69,10 +71,16 @@ img{max-width:100%;display:block}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 @media(max-width:768px){
+  .nav-logo-img{height:40px}
+  .nav.scrolled .nav-logo-img{height:34px}
   .nav-links{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:var(--bg-deep);flex-direction:column;padding:80px 32px 32px;gap:20px;transition:right 0.3s ease;box-shadow:-4px 0 20px rgba(0,0,0,0.3)}
   .nav-links.open{right:0}
   .nav-links a{font-size:1rem}
   .hamburger{display:flex}
+}
+@media(max-width:480px){
+  .nav-logo-img{height:34px}
+  .nav.scrolled .nav-logo-img{height:28px}
 }
 
 /* ===== HERO ===== */
@@ -169,7 +177,7 @@ img{max-width:100%;display:block}
 <!-- ===== NAVIGATION ===== -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">AKSHAR YOGA KENDRAA</a>
+    <a href="#" class="nav-logo"><img src="logo.webp" alt="Akshar Yoga Kendraa" class="nav-logo-img"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#event">The Event</a></li>
