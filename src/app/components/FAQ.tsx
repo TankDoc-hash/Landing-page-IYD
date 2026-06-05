@@ -14,7 +14,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
     <div className="faq-item">
       <div className="faq-question" onClick={() => setOpen(!open)}>
         <span>{question}</span>
-        <span className="text-gold text-xl">{open ? "−" : "+"}</span>
+        <span className="text-gold text-xl">{open ? "\u2212" : "+"}</span>
       </div>
       {open && <div className="faq-answer">{answer}</div>}
     </div>
@@ -26,7 +26,8 @@ const faqSections = [
     title: "The Practice",
     items: [
       {
-        question: "Can I blink during Tratak?",
+        question:
+          "I can't look at a point for 2 minutes without blinking. Is it okay to blink?",
         answer:
           "Yes. Blinking is completely natural and allowed during the attempt. Just keep your gaze steady, comfortable, and relaxed.",
       },
@@ -55,7 +56,8 @@ const faqSections = [
           "Yes. Children are welcome to join, provided parents or guardians assist with the registration and video upload.",
       },
       {
-        question: "Can I register for both the offline and online records?",
+        question:
+          "Can I register for both the offline and online attempts?",
         answer:
           "Yes. You may register separately for our offline events as well as this online Tratak record.",
       },
@@ -67,10 +69,11 @@ const faqSections = [
       {
         question: "Do I need a new Instagram account?",
         answer:
-          'No, you can use your current account. It just needs to be set to "Public" during the verification process so the judges can see it. You can change it back afterward.',
+          'No, you can use your current account. It just needs to be set to "Public" during the verification process so the verification team can review it. You can change it back afterward.',
       },
       {
-        question: "Can my friend and I use the same Instagram account?",
+        question:
+          "Can my friend and I use the same Instagram account?",
         answer:
           "No. Each person needs their own individual Instagram account to be counted.",
       },
@@ -85,9 +88,9 @@ const faqSections = [
 
 export default function FAQ() {
   return (
-    <section className="py-20 px-4 bg-navy-dark">
+    <section className="faq-section py-16 md:py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1a1a1a]">
           Frequently Asked Questions
         </h2>
         <div className="section-divider mb-12" />
@@ -107,14 +110,14 @@ export default function FAQ() {
           </div>
         ))}
 
-        <div className="mt-10 p-6 rounded-xl" style={{ background: "rgba(255,255,255,0.05)" }}>
+        <div className="mt-10 p-6 rounded-xl faq-guidelines">
           <h3 className="text-xl font-bold text-gold mb-4">
             Event Guidelines & Terms
           </h3>
-          <ul className="space-y-3 text-gray-300 list-disc list-inside">
+          <ul className="space-y-3 text-[#555] list-disc list-inside">
             <li>
-              This Online Guinness World Record Attempt is proudly sponsored by
-              Akshar Yoga Kendraa and is 100% free to enter.
+              This Online Guinness World Record Attempt is sponsored by Akshar
+              Yoga Kendraa and is 100% free to enter.
             </li>
             <li>
               Please ensure you complete the official registration and follow
@@ -125,9 +128,9 @@ export default function FAQ() {
               Offline events require separate registration.
             </li>
             <li>
-              To ensure your video counts toward the world record, all
-              submission deadlines and Instagram posting rules must be followed
-              carefully.
+              To ensure your submission is eligible for review as part of the
+              Guinness World Records&trade; attempt, all submission deadlines and
+              Instagram posting requirements must be followed carefully.
             </li>
           </ul>
         </div>

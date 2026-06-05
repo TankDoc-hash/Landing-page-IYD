@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
         hostname: "www.train.aksharyogaonline.com",
       },
     ],
+    unoptimized: true,
   },
 };
 

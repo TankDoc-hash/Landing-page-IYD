@@ -75,7 +75,7 @@ export default function YogaPoses() {
   return (
     <section className="py-20 px-4 bg-navy">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-2">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2">
           21 Asanas | 21 Guinness World Records | 1 Global Movement
         </h2>
         <div className="section-divider mb-16" />
