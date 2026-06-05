@@ -149,7 +149,7 @@ export default function Home() {
                 />
                 <div className="text-center px-4 py-2 rounded-lg border border-gold/40 bg-gold/10">
                   <p className="text-gold font-bold text-sm leading-tight">
-                    21 GUINNESS WORLD
+                    12 GUINNESS WORLD
                     <br />
                     RECORDS
                   </p>
