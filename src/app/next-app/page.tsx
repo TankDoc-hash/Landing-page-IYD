@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CountdownTimer from "./components/CountdownTimer";
-import FAQ from "./components/FAQ";
+import CountdownTimer from "../components/CountdownTimer";
+import FAQ from "../components/FAQ";
 
 const IMG = "https://www.train.aksharyogaonline.com/hosted/images";
 
