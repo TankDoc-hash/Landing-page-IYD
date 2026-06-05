@@ -96,7 +96,7 @@ export default function Home() {
               <span className="text-gold text-lg mt-0.5 shrink-0">&#10003;</span>
               <p className="text-gray-300">
                 Event Begins:{" "}
-                <strong className="text-white">June 20, 2026</strong>
+                <strong className="text-white">June 21, 2026</strong>
               </p>
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function Home() {
                 </li>
                 <li className="flex gap-3">
                   <span className="text-gold font-bold shrink-0">Event Date:</span>
-                  <span>June 20, 2026</span>
+                  <span>June 21, 2026</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-gold font-bold shrink-0">Submission Method:</span>
