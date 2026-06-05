@@ -44,9 +44,10 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ success: true, data });
-  } catch {
+  } catch (err) {
+    console.error("Register API error:", err);
     return NextResponse.json(
-      { error: "Internal server error" },
+      { error: "Internal server error", details: String(err) },
       { status: 500 }
     );
   }
