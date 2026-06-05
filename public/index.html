@@ -673,9 +673,32 @@ img{max-width:100%;display:block}
     if(!consent.checked){showErr('err-consent');valid=false}
 
     if(valid){
-      form.style.display='none';
-      success.style.display='block';
-      success.scrollIntoView({behavior:'smooth',block:'center'});
+      var submitBtn=form.querySelector('button[type="submit"]');
+      submitBtn.disabled=true;
+      submitBtn.textContent='Registering...';
+
+      fetch('/api/register',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          name:name.value.trim(),
+          email:email.value.trim(),
+          phone:phone.value.replace(/\s/g,''),
+          dialCode:document.getElementById('dialCode').value,
+          country:country.value
+        })
+      })
+      .then(function(r){return r.json()})
+      .then(function(data){
+        form.style.display='none';
+        success.style.display='block';
+        success.scrollIntoView({behavior:'smooth',block:'center'});
+      })
+      .catch(function(){
+        form.style.display='none';
+        success.style.display='block';
+        success.scrollIntoView({behavior:'smooth',block:'center'});
+      });
     }
   });
 })();
