@@ -12,10 +12,17 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
   return (
     <div className="faq-item">
-      <div className="faq-question" onClick={() => setOpen(!open)}>
-        <span>{question}</span>
-        <span className="text-gold text-xl">{open ? "\u2212" : "+"}</span>
-      </div>
+      <button
+        className="faq-question"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        type="button"
+      >
+        <span className="text-left">{question}</span>
+        <span className="text-gold text-xl ml-4 shrink-0">
+          {open ? "\u2212" : "+"}
+        </span>
+      </button>
       {open && <div className="faq-answer">{answer}</div>}
     </div>
   );
@@ -90,14 +97,14 @@ export default function FAQ() {
   return (
     <section className="faq-section py-16 md:py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1a1a1a]">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-[#1a1a1a]">
           Frequently Asked Questions
         </h2>
         <div className="section-divider mb-12" />
 
         {faqSections.map((section) => (
-          <div key={section.title} className="mb-10">
-            <h3 className="text-xl font-bold text-gold mb-4">
+          <div key={section.title} className="mb-8">
+            <h3 className="text-lg font-bold text-gold mb-3">
               {section.title}
             </h3>
             {section.items.map((item) => (
@@ -110,11 +117,11 @@ export default function FAQ() {
           </div>
         ))}
 
-        <div className="mt-10 p-6 rounded-xl faq-guidelines">
-          <h3 className="text-xl font-bold text-gold mb-4">
+        <div className="mt-10 p-5 sm:p-6 rounded-xl faq-guidelines">
+          <h3 className="text-lg font-bold text-gold mb-4">
             Event Guidelines & Terms
           </h3>
-          <ul className="space-y-3 text-[#555] list-disc list-inside">
+          <ul className="space-y-3 text-[#555] text-sm sm:text-base list-disc list-inside leading-relaxed">
             <li>
               This Online Guinness World Record Attempt is sponsored by Akshar
               Yoga Kendraa and is 100% free to enter.
